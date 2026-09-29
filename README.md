@@ -73,3 +73,4 @@ export default defineConfig([
 ])
 
 ```
+Frontend deployment setup.
