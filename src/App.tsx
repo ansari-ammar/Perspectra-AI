@@ -164,7 +164,7 @@ async function sendMessage() {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/debate",
+      "https://perspectra-ai-api.onrender.com/api/debate",
       {
         method: "POST",
         headers: {
