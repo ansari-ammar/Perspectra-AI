@@ -503,49 +503,66 @@ async function sendMessage() {
               </div>
             </section>
                         <section className="about-section" id="about">
-              <p className="section-label">ABOUT PERSPECTRA AI</p>
+  <p className="section-label">ABOUT PERSPECTRA AI</p>
 
-              <h2>
-                Think beyond
-                <br />
-                <span>your perspective.</span>
-              </h2>
+  <h2>
+    Think beyond
+    <br />
+    <span>your perspective.</span>
+  </h2>
 
-              <p className="about-description">
-                Perspectra AI is an AI-powered debate platform that helps you
-                explore ideas, challenge assumptions, and practice building
-                stronger arguments through thoughtful discussions.
-              </p>
+  <p className="about-description">
+    Perspectra AI is an AI-powered debate platform designed to help you
+    explore ideas, challenge assumptions, and build stronger arguments
+    through thoughtful discussions.
+  </p>
 
-              <div className="about-grid">
-                <article className="about-card">
-                  <span className="feature-number">01</span>
-                  <h3>Our Mission</h3>
-                  <p>
-                    To make thoughtful discussions accessible and encourage
-                    people to understand different viewpoints.
-                  </p>
-                </article>
+  <div className="about-grid">
+    <article className="about-card">
+      <span className="feature-number">01</span>
 
-                <article className="about-card">
-                  <span className="feature-number">02</span>
-                  <h3>Think Critically</h3>
-                  <p>
-                    Practice questioning ideas, organizing your thoughts, and
-                    supporting your opinions with clear reasoning.
-                  </p>
-                </article>
+      <h3>Our Mission</h3>
 
-                <article className="about-card">
-                  <span className="feature-number">03</span>
-                  <h3>Learn Both Sides</h3>
-                  <p>
-                    Explore arguments for and against a topic and discover
-                    perspectives you may not have considered.
-                  </p>
-                </article>
-              </div>
-            </section>
+      <p>
+        To make thoughtful discussions accessible and encourage people
+        to understand different viewpoints.
+      </p>
+    </article>
+
+    <article className="about-card">
+      <span className="feature-number">02</span>
+
+      <h3>Founded & Developed by Ammar Ansari</h3>
+
+      <p>
+        Perspectra AI was founded and developed by Ammar Ansari with
+        the vision of making debate practice more interactive,
+        accessible, and meaningful.
+      </p>
+
+      <div className="founder-contact">
+        <a href="tel:+9120106944">
+          +91 912-010-6944
+        </a>
+
+        <a href="mailto:ammarussalamansari@gmail.com">
+          ammarussalamansari@gmail.com
+        </a>
+      </div>
+    </article>
+
+    <article className="about-card">
+      <span className="feature-number">03</span>
+
+      <h3>Learn Both Sides</h3>
+
+      <p>
+        Explore arguments for and against a topic and discover
+        perspectives you may not have considered.
+      </p>
+    </article>
+  </div>
+</section>
           </>
         ) : showSetup ? (
           <section className="setup-section" id="debate">
@@ -708,15 +725,23 @@ async function sendMessage() {
       </main>
 
 
-      <footer>
-        <a className="brand footer-brand" href="/">
-          <span className="brand-icon">P</span>
-          <span>
-            Perspectra <strong>AI</strong>
-          </span>
-        </a>
-        <p>Think beyond your perspective.</p>
-      </footer>
+<footer className="site-footer">
+  <a className="brand footer-brand" href="/">
+    <span className="brand-icon">P</span>
+
+    <span>
+      Perspectra <strong>AI</strong>
+    </span>
+  </a>
+
+  <div className="footer-meta">
+    <p>
+      Founded &amp; Developed by <strong>Ammar Ansari</strong>
+    </p>
+
+    <p>© 2026 Perspectra AI. All rights reserved.</p>
+  </div>
+</footer>
     </div>
   );
 }
