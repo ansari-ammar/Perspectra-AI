@@ -532,17 +532,18 @@ async function sendMessage() {
     <article className="about-card">
       <span className="feature-number">02</span>
 
-      <h3>Founded & Developed by Ammar Ansari</h3>
+      <h3>Developed by Ammar Ansari</h3>
 
       <p>
-        Perspectra AI was founded and developed by Ammar Ansari with
-        the vision of making debate practice more interactive,
-        accessible, and meaningful.
+        Perspectra AI was founded and developed by <strong>Ammar Ansari</strong> ,
+        a BCA student specializing in Artificial Intelligence, with the 
+        idea of making debate practice more accessible, interactive, 
+        and useful for students and curious minds.
       </p>
 
       <div className="founder-contact">
         <a href="tel:+9120106944">
-          +91 912-010-6944
+          +91 9120106944
         </a>
 
         <a href="mailto:ammarussalamansari@gmail.com">
