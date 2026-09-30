@@ -172,29 +172,108 @@ Give your debate response.
     // 2. FALLBACK TO OPENROUTER
     // =========================================================
 
-    if (!process.env.OPENROUTER_API_KEY) {
+
+    if (process.env.OPENROUTER_API_KEY) {
+      try {
+        console.log("Trying OpenRouter fallback...");
+
+        const openRouterResponse = await fetch(
+          "https://openrouter.ai/api/v1/chat/completions",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+              "HTTP-Referer": "https://perspectra-ai.vercel.app",
+              "X-Title": "Perspectra AI",
+            },
+            body: JSON.stringify({
+              model: "openrouter/free",
+              messages: [
+                {
+                  role: "user",
+                  content: prompt,
+                },
+              ],
+              max_tokens: 700,
+              temperature: 0.7,
+            }),
+          }
+        );
+
+        const data = await openRouterResponse.json();
+
+        if (!openRouterResponse.ok) {
+          console.error(
+            "OpenRouter error:",
+            openRouterResponse.status,
+            data
+          );
+
+          throw new Error(
+            data?.error?.message ||
+              "OpenRouter request failed."
+          );
+        }
+
+        const reply =
+          data?.choices?.[0]?.message?.content;
+
+        if (!reply) {
+          throw new Error(
+            "OpenRouter returned an empty response."
+          );
+        }
+
+        console.log("Response provider: OpenRouter");
+
+        return res.json({
+          reply,
+          provider: "OpenRouter",
+        });
+      } catch (openRouterError) {
+
+        console.error(
+          "OpenRouter fallback failed:",
+          openRouterError.message
+        );
+
+        console.log(
+          "Switching to Groq fallback..."
+        );
+      }
+    } else {
+      openRouterFailed = true;
+
+      console.log(
+        "OPENROUTER_API_KEY not configured. Switching to Groq..."
+      );
+    }
+
+    // =========================================================
+    // 3. FALLBACK TO GROQ
+    // =========================================================
+
+    if (!process.env.GROQ_API_KEY) {
       return res.status(500).json({
         error:
-          "Both Gemini and OpenRouter are unavailable. Please configure the AI providers.",
+          "All AI providers are unavailable. Please configure Gemini, OpenRouter or Groq.",
       });
     }
 
     try {
-      console.log("Trying OpenRouter fallback...");
+      console.log("Trying Groq fallback...");
 
-      const openRouterResponse = await fetch(
-        "https://openrouter.ai/api/v1/chat/completions",
+      const groqResponse = await fetch(
+        "https://api.groq.com/openai/v1/chat/completions",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
-            "HTTP-Referer":
-              "https://perspectra-ai.vercel.app",
-            "X-Title": "Perspectra AI",
+            Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           },
           body: JSON.stringify({
-            model: "openrouter/free",
+            model: "openai/gpt-oss-20b",
             messages: [
               {
                 role: "user",
@@ -207,18 +286,18 @@ Give your debate response.
         }
       );
 
-      const data = await openRouterResponse.json();
+      const data = await groqResponse.json();
 
-      if (!openRouterResponse.ok) {
+      if (!groqResponse.ok) {
         console.error(
-          "OpenRouter error:",
-          openRouterResponse.status,
+          "Groq error:",
+          groqResponse.status,
           data
         );
 
         throw new Error(
           data?.error?.message ||
-            "OpenRouter request failed."
+            "Groq request failed."
         );
       }
 
@@ -227,27 +306,28 @@ Give your debate response.
 
       if (!reply) {
         throw new Error(
-          "OpenRouter returned an empty response."
+          "Groq returned an empty response."
         );
       }
 
-      console.log("Response provider: OpenRouter");
+      console.log("Response provider: Groq");
 
       return res.json({
         reply,
-        provider: "OpenRouter",
+        provider: "Groq",
       });
-    } catch (openRouterError) {
+    } catch (groqError) {
       console.error(
-        "OpenRouter fallback failed:",
-        openRouterError.message
+        "Groq fallback failed:",
+        groqError.message
       );
 
       return res.status(500).json({
         error:
-          "AI response could not be generated. Please try again.",
+          "All AI providers failed. Please try again later.",
       });
     }
+
   } catch (error) {
     console.error("Debate API error:", error);
 
