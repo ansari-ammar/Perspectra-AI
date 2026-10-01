@@ -1051,3 +1051,3433 @@ footer p {
     width: fit-content;
   }
 }
+/* ================================
+   PERSPECTRA AI AGENT
+================================ */
+
+.agent-home-button {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #111;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.agent-home-button:hover {
+  transform: translateY(-2px);
+}
+
+.agent-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #080808;
+  color: #fff;
+}
+
+.agent-header {
+  height: 72px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.agent-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.agent-title strong {
+  display: block;
+}
+
+.agent-title small {
+  display: block;
+  opacity: 0.55;
+  margin-top: 3px;
+}
+
+.agent-new-chat {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: white;
+  padding: 9px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.agent-main {
+  flex: 1;
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 180px;
+}
+
+.agent-welcome {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.agent-welcome-icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.agent-welcome h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 54px);
+}
+
+.agent-welcome p {
+  max-width: 620px;
+  opacity: 0.6;
+  line-height: 1.7;
+}
+
+.agent-suggestions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: min(620px, 100%);
+  margin-top: 25px;
+}
+
+.agent-suggestions button {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+.agent-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.agent-message {
+  max-width: 80%;
+}
+
+.agent-user-message {
+  margin-left: auto;
+  background: rgba(255,255,255,0.08);
+  padding: 14px 17px;
+  border-radius: 16px;
+}
+
+.agent-ai-message {
+  margin-right: auto;
+}
+
+.agent-message-label {
+  display: block;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 7px;
+}
+
+.agent-message p {
+  margin: 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.agent-input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 20px 18px;
+  background: linear-gradient(
+    transparent,
+    #080808 25%
+  );
+}
+
+.agent-tools,
+.agent-input-box,
+.agent-disclaimer {
+  width: min(900px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agent-tools {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.agent-tools button {
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  padding: 8px 11px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.agent-input-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: #111;
+  border-radius: 16px;
+}
+
+.agent-input-box textarea {
+  flex: 1;
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: white;
+  font: inherit;
+  padding: 8px;
+}
+
+.agent-send-button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 12px;
+  background: white;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.agent-send-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.agent-disclaimer {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.35;
+  margin-top: 7px;
+}
+
+@media (max-width: 600px) {
+  .agent-header {
+    padding: 0 14px;
+  }
+
+  .agent-new-chat {
+    font-size: 12px;
+  }
+
+  .agent-suggestions {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-tools {
+    overflow-x: auto;
+  }
+
+  .agent-tools button {
+    white-space: nowrap;
+  }
+
+  .agent-message {
+    max-width: 92%;
+  }
+}
+/* =========================================================
+   PERSPECTRA AI AGENT SIDEBAR
+   ========================================================= */
+
+.agent-page {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #080808;
+  color: #ffffff;
+}
+
+.agent-sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  background: #101010;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.agent-sidebar-top {
+  padding: 18px 16px;
+}
+
+.agent-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.agent-sidebar-new {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: #181818;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+}
+
+.agent-sidebar-new:hover {
+  background: #222222;
+}
+
+.agent-history-title {
+  padding: 0 16px 10px;
+  font-size: 12px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.agent-chat-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+
+.agent-chat-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4px;
+  border-radius: 9px;
+}
+
+.agent-chat-item.active {
+  background: #1d1d1d;
+}
+
+.agent-chat-select {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 8px;
+  border: none;
+  background: transparent;
+  color: #ddd;
+  cursor: pointer;
+  text-align: left;
+}
+
+.agent-chat-select:hover {
+  color: white;
+}
+
+.agent-chat-icon {
+  flex-shrink: 0;
+  font-size: 13px;
+}
+
+.agent-chat-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+}
+
+.agent-chat-delete {
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  padding: 7px 10px;
+  font-size: 18px;
+}
+
+.agent-chat-delete:hover {
+  color: white;
+}
+
+.agent-sidebar-bottom {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.agent-sidebar-bottom button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 0;
+}
+
+.agent-sidebar-bottom button:hover {
+  color: white;
+}
+
+/* =========================================================
+   AGENT WORKSPACE
+   ========================================================= */
+
+.agent-workspace {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-header {
+  height: 70px;
+  min-height: 70px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #090909;
+}
+
+.agent-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.agent-title strong {
+  display: block;
+  font-size: 15px;
+}
+
+.agent-title small {
+  display: block;
+  margin-top: 3px;
+  color: #777;
+  font-size: 11px;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: black;
+  font-weight: 700;
+}
+
+.agent-new-chat,
+.back-button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #151515;
+  color: white;
+  border-radius: 9px;
+  padding: 9px 13px;
+  cursor: pointer;
+}
+
+.agent-new-chat:hover,
+.back-button:hover {
+  background: #222;
+}
+
+.agent-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 20px 150px;
+}
+
+.agent-welcome {
+  max-width: 760px;
+  margin: 100px auto 0;
+  text-align: center;
+}
+
+.agent-welcome-icon {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.agent-welcome h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.agent-welcome p {
+  max-width: 600px;
+  margin: 15px auto 28px;
+  color: #888;
+  line-height: 1.6;
+}
+
+.agent-suggestions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.agent-suggestions button {
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+  background: #111;
+  color: #ddd;
+  cursor: pointer;
+  text-align: left;
+}
+
+.agent-suggestions button:hover {
+  background: #191919;
+}
+
+.agent-messages {
+  width: min(850px, 100%);
+  margin: auto;
+}
+
+.agent-message {
+  margin-bottom: 24px;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.agent-user-message {
+  background: #191919;
+  margin-left: auto;
+  max-width: 75%;
+}
+
+.agent-ai-message {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.agent-message-label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  color: #777;
+}
+
+.agent-message p {
+  margin: 0;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.agent-message-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.agent-message-actions button {
+  border: none;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 6px;
+}
+
+.agent-message-actions button:hover {
+  color: white;
+}
+
+.agent-input-container {
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
+  padding: 14px 20px 12px;
+  background: linear-gradient(
+    to top,
+    #080808 75%,
+    transparent
+  );
+}
+
+.agent-tools {
+  width: min(850px, 100%);
+  margin: 0 auto 8px;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.agent-tools button {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #111;
+  color: #999;
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.agent-tools button:hover {
+  color: white;
+  background: #191919;
+}
+
+.agent-input-box {
+  width: min(850px, 100%);
+  margin: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.agent-input-box textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding: 8px;
+  font: inherit;
+}
+
+.agent-input-box textarea::placeholder {
+  color: #666;
+}
+
+.agent-send-button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.agent-send-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.agent-disclaimer {
+  width: min(850px, 100%);
+  margin: 7px auto 0;
+  text-align: center;
+  font-size: 10px;
+  color: #555;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .agent-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .agent-input-container {
+    left: 220px;
+  }
+
+  .agent-user-message {
+    max-width: 90%;
+  }
+
+  .agent-header {
+    padding: 0 14px;
+  }
+
+  .agent-header .back-button {
+    display: none;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .agent-sidebar {
+    display: none;
+  }
+
+  .agent-input-container {
+    left: 0;
+  }
+
+  .agent-header {
+    height: 62px;
+    min-height: 62px;
+  }
+
+  .agent-title small {
+    display: none;
+  }
+
+  .agent-new-chat {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .agent-main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .agent-welcome {
+    margin-top: 70px;
+  }
+
+  .agent-welcome h1 {
+    font-size: 27px;
+  }
+
+  .agent-suggestions {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-message {
+    padding: 14px;
+  }
+
+}
+/* =========================================================
+   PERSPECTRA AI AGENT - CLEAN FINAL UI
+   ========================================================= */
+
+.agent-page {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+
+  background: #080808;
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.agent-sidebar {
+  width: 290px;
+  min-width: 290px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #101010;
+  border-right: 1px solid #272727;
+
+  box-sizing: border-box;
+}
+
+.agent-sidebar-brand {
+  height: 86px;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  border-bottom: 1px solid #252525;
+}
+
+.agent-brand-logo {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #000000;
+
+  border-radius: 9px;
+
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.agent-sidebar-brand h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.agent-sidebar-brand p {
+  margin: 3px 0 0;
+
+  color: #686868;
+  font-size: 11px;
+}
+
+
+.agent-sidebar-new {
+  height: 46px;
+
+  margin: 36px 29px 26px;
+
+  border: 1px solid #363636;
+  border-radius: 10px;
+
+  background: #171717;
+  color: #ffffff;
+
+  font-size: 14px;
+  text-align: left;
+
+  padding: 0 15px;
+
+  cursor: pointer;
+}
+
+.agent-sidebar-new:hover {
+  background: #202020;
+}
+
+
+.agent-sidebar-history {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 0 12px;
+}
+
+.agent-sidebar-title {
+  margin: 10px 0 12px;
+  padding: 0 1px;
+
+  color: #777777;
+
+  font-size: 11px;
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+.agent-chat-item {
+  width: 100%;
+  min-height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 4px;
+
+  border-radius: 9px;
+  border: 1px solid transparent;
+
+  background: transparent;
+
+  box-sizing: border-box;
+}
+
+.agent-chat-item.active {
+  background: #1d1d1d;
+  border-color: #303030;
+}
+
+.agent-chat-item:hover {
+  background: #191919;
+}
+
+
+.agent-chat-select {
+  flex: 1;
+  min-width: 0;
+
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 10px;
+
+  border: 0;
+  background: transparent;
+  color: #bcbcbc;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.agent-chat-item.active .agent-chat-select {
+  color: #ffffff;
+}
+
+.agent-chat-icon {
+  font-size: 12px;
+}
+
+.agent-chat-title {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-size: 13px;
+}
+
+
+.agent-chat-delete {
+  width: 36px;
+  height: 36px;
+
+  margin-right: 3px;
+
+  border: 0;
+  background: transparent;
+
+  color: #777777;
+
+  cursor: pointer;
+}
+
+.agent-chat-delete:hover {
+  color: #ffffff;
+}
+
+
+.agent-sidebar-back {
+  height: 67px;
+  min-height: 67px;
+
+  padding: 0 14px;
+
+  border: 0;
+  border-top: 1px solid #252525;
+
+  background: #101010;
+
+  color: #8b8b8b;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.agent-sidebar-back:hover {
+  color: #ffffff;
+  background: #151515;
+}
+
+
+/* ================= WORKSPACE ================= */
+
+.agent-workspace {
+  flex: 1;
+  min-width: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #080808;
+
+  overflow: hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.agent-header {
+  position: relative;
+
+  height: 76px;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid #222222;
+
+  background: #080808;
+}
+
+.agent-header-center {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.agent-logo {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-weight: 800;
+}
+
+.agent-header-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.agent-header-subtitle {
+  margin: 2px 0 0;
+
+  color: #656565;
+
+  font-size: 11px;
+}
+
+
+.agent-new-chat {
+  position: absolute;
+
+  right: 24px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  height: 42px;
+
+  padding: 0 15px;
+
+  border: 1px solid #343434;
+  border-radius: 9px;
+
+  background: #151515;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.agent-new-chat:hover {
+  background: #202020;
+}
+
+
+/* ================= MAIN ================= */
+
+.agent-main {
+  position: relative;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ================= MESSAGES ================= */
+
+.agent-messages {
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+
+  width: 100%;
+  max-width: 920px;
+
+  margin: 0 auto;
+
+  padding: 30px 32px 190px;
+
+  box-sizing: border-box;
+}
+
+
+.agent-welcome {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding-bottom: 50px;
+}
+
+.agent-welcome-icon {
+  margin-bottom: 20px;
+
+  font-size: 30px;
+}
+
+.agent-welcome h1 {
+  margin: 0 0 13px;
+
+  font-size: 42px;
+  line-height: 1.1;
+
+  color: #ffffff;
+}
+
+.agent-welcome p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* ================= SUGGESTIONS ================= */
+
+.agent-suggestions {
+  width: min(680px, 100%);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.agent-suggestion {
+  min-height: 52px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #292929;
+  border-radius: 10px;
+
+  background: #111111;
+  color: #a7a7a7;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.agent-suggestion:hover {
+  background: #181818;
+  border-color: #3b3b3b;
+
+  color: #ffffff;
+}
+
+
+/* ================= MESSAGES ================= */
+
+.agent-message-list {
+  width: 100%;
+}
+
+.agent-message {
+  width: 100%;
+
+  margin-bottom: 26px;
+}
+
+.agent-message-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.agent-message.user .agent-message-inner {
+  justify-content: flex-end;
+}
+
+.agent-avatar {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.agent-message-column {
+  max-width: 78%;
+}
+
+.agent-message-content {
+  padding: 13px 15px;
+
+  border-radius: 13px;
+
+  font-size: 14px;
+  line-height: 1.65;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.agent-message.user .agent-message-content {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+.agent-message.assistant .agent-message-content {
+  background: transparent;
+  color: #dddddd;
+}
+
+
+.agent-message-actions {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 7px;
+
+  opacity: 0;
+  transition: 0.15s;
+}
+
+.agent-message:hover .agent-message-actions {
+  opacity: 1;
+}
+
+.agent-message-actions button {
+  border: 0;
+
+  background: transparent;
+
+  color: #686868;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.agent-message-actions button:hover {
+  color: #ffffff;
+}
+
+
+/* ================= TYPING ================= */
+
+.agent-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 14px 4px;
+}
+
+.agent-typing span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #777777;
+
+  animation: agentTyping 1.2s infinite ease-in-out;
+}
+
+.agent-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.agent-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes agentTyping {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+
+/* ================= INPUT ================= */
+
+.agent-input-container {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 10;
+
+  padding: 20px 30px 17px;
+
+  background: linear-gradient(
+    to top,
+    #080808 72%,
+    rgba(8, 8, 8, 0)
+  );
+}
+
+.agent-input-wrapper {
+  width: min(850px, 100%);
+
+  margin: 0 auto;
+}
+
+
+.agent-tools {
+  display: flex;
+
+  gap: 7px;
+
+  margin-bottom: 9px;
+
+  flex-wrap: wrap;
+}
+
+.agent-tool {
+  height: 34px;
+
+  padding: 0 11px;
+
+  border: 1px solid #292929;
+  border-radius: 8px;
+
+  background: #111111;
+  color: #929292;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.agent-tool:hover {
+  background: #191919;
+  color: #ffffff;
+}
+
+
+.agent-input-box {
+  min-height: 76px;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border: 1px solid #303030;
+  border-radius: 15px;
+
+  background: #121212;
+
+  box-sizing: border-box;
+}
+
+.agent-input-box textarea {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 52px;
+
+  resize: none;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.agent-input-box textarea::placeholder {
+  color: #626262;
+}
+
+
+.agent-send-button {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.agent-send-button:hover {
+  background: #dddddd;
+}
+
+.agent-send-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+
+.agent-disclaimer {
+  margin-top: 7px;
+
+  text-align: center;
+
+  color: #444444;
+
+  font-size: 10px;
+}
+
+
+/* ================= SCROLLBARS ================= */
+
+.agent-sidebar-history::-webkit-scrollbar,
+.agent-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.agent-sidebar-history::-webkit-scrollbar-thumb,
+.agent-messages::-webkit-scrollbar-thumb {
+  background: #292929;
+
+  border-radius: 10px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+  .agent-sidebar {
+    display: none;
+  }
+
+  .agent-workspace {
+    width: 100vw;
+  }
+
+  .agent-header {
+    height: 65px;
+    min-height: 65px;
+  }
+
+  .agent-header-title {
+    font-size: 14px;
+  }
+
+  .agent-new-chat {
+    right: 12px;
+
+    height: 38px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .agent-messages {
+    padding: 25px 15px 175px;
+  }
+
+  .agent-input-container {
+    padding: 12px 12px 15px;
+  }
+
+  .agent-suggestions {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-welcome h1 {
+    font-size: 30px;
+  }
+
+  .agent-welcome p {
+    font-size: 13px;
+  }
+
+  .agent-message-column {
+    max-width: 88%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .agent-header-subtitle {
+    display: none;
+  }
+
+  .agent-new-chat {
+    width: 38px;
+
+    padding: 0;
+
+    font-size: 0;
+  }
+
+  .agent-new-chat::after {
+    content: "+";
+
+    font-size: 20px;
+  }
+
+  .agent-tools {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .agent-tool {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+/* =========================================================
+   PERSPECTRA AI AGENT
+   COMPLETE CHAT LAYOUT
+   ========================================================= */
+
+/* ---------- PAGE ROOT ---------- */
+
+.agent-page {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+   ========================================================= */
+
+.agent-sidebar {
+  position: relative !important;
+
+  flex: 0 0 280px !important;
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+
+  height: 100vh !important;
+  min-height: 100vh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  box-sizing: border-box !important;
+
+  background: #101010 !important;
+  border-right: 1px solid #282828 !important;
+
+  overflow: hidden !important;
+
+  z-index: 20 !important;
+}
+
+
+/* Sidebar brand */
+
+.agent-sidebar-brand {
+  flex: 0 0 auto !important;
+
+  width: 100% !important;
+  min-height: 112px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0 28px !important;
+
+  box-sizing: border-box !important;
+
+  border-bottom: 1px solid #282828 !important;
+}
+
+
+/* New chat button area */
+
+.agent-sidebar-new {
+  flex: 0 0 auto !important;
+
+  padding: 28px !important;
+
+  display: block !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* New chat button */
+
+.agent-sidebar-new button {
+  width: 100% !important;
+  height: 48px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0 16px !important;
+
+  background: #181818 !important;
+  border: 1px solid #303030 !important;
+  border-radius: 10px !important;
+
+  color: #ffffff !important;
+
+  cursor: pointer !important;
+}
+
+
+/* Chat history */
+
+.agent-sidebar-history {
+  flex: 1 1 auto !important;
+
+  min-height: 0 !important;
+
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding: 0 12px !important;
+
+  box-sizing: border-box !important;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+
+/* Sidebar bottom */
+
+.agent-sidebar-back {
+  flex: 0 0 auto !important;
+
+  min-height: 66px !important;
+
+  width: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0 20px !important;
+
+  box-sizing: border-box !important;
+
+  border-top: 1px solid #282828 !important;
+}
+
+
+/* =========================================================
+   RIGHT WORKSPACE
+   ========================================================= */
+
+.agent-workspace {
+  position: relative !important;
+
+  flex: 1 1 auto !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  height: 100vh !important;
+  min-height: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+
+  background: #080808 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+
+.agent-header {
+  position: relative !important;
+
+  flex: 0 0 84px !important;
+
+  width: 100% !important;
+  height: 84px !important;
+  min-height: 84px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  margin: 0 !important;
+  padding: 0 28px !important;
+
+  box-sizing: border-box !important;
+
+  border-bottom: 1px solid #242424 !important;
+
+  background: #080808 !important;
+
+  z-index: 10 !important;
+}
+
+
+/* Header title */
+
+.agent-title {
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  margin: 0 auto !important;
+}
+
+
+/* Don't let header title become absolutely centered weirdly */
+
+.agent-header .agent-title {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+}
+
+
+/* Header icon */
+
+.agent-title .brand-icon {
+  width: 40px !important;
+  height: 40px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-shrink: 0 !important;
+
+  border-radius: 10px !important;
+
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+
+/* Title text */
+
+.agent-title strong {
+  display: block !important;
+
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
+.agent-title small {
+  display: block !important;
+
+  margin-top: 2px !important;
+
+  font-size: 12px !important;
+
+  color: #777777 !important;
+}
+
+
+/* New chat in header */
+
+.agent-new-chat {
+  position: relative !important;
+
+  margin-left: auto !important;
+
+  height: 46px !important;
+
+  padding: 0 18px !important;
+
+  background: #151515 !important;
+
+  border: 1px solid #303030 !important;
+  border-radius: 10px !important;
+
+  color: #ffffff !important;
+
+  cursor: pointer !important;
+
+  z-index: 2 !important;
+}
+
+
+/* =========================================================
+   MAIN CHAT AREA
+   ========================================================= */
+
+.agent-main {
+  position: relative !important;
+
+  flex: 1 1 auto !important;
+
+  width: 100% !important;
+  min-height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  box-sizing: border-box !important;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+
+/* =========================================================
+   EMPTY / WELCOME SCREEN
+   ========================================================= */
+
+.agent-welcome {
+  width: min(760px, calc(100% - 48px)) !important;
+
+  margin: auto !important;
+
+  padding: 50px 0 !important;
+
+  text-align: center !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Welcome icon */
+
+.agent-welcome-icon {
+  margin-bottom: 22px !important;
+
+  font-size: 30px !important;
+}
+
+
+/* Welcome heading */
+
+.agent-welcome h1 {
+  margin: 0 !important;
+
+  font-size: clamp(34px, 4vw, 48px) !important;
+  line-height: 1.1 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* Welcome description */
+
+.agent-welcome p {
+  max-width: 650px !important;
+
+  margin: 22px auto 32px !important;
+
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+
+  color: #777777 !important;
+}
+
+
+/* Suggestion cards */
+
+.agent-suggestions {
+  width: 100% !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 12px !important;
+}
+
+
+.agent-suggestions button {
+  min-height: 62px !important;
+
+  padding: 0 18px !important;
+
+  text-align: left !important;
+
+  background: #111111 !important;
+
+  border: 1px solid #2b2b2b !important;
+  border-radius: 12px !important;
+
+  color: #eeeeee !important;
+
+  cursor: pointer !important;
+
+  transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+
+
+.agent-suggestions button:hover {
+  background: #171717 !important;
+  border-color: #414141 !important;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.agent-messages {
+  width: min(900px, calc(100% - 48px)) !important;
+
+  margin: 0 auto !important;
+
+  padding: 32px 0 150px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+.agent-message {
+  max-width: 80% !important;
+
+  margin-bottom: 24px !important;
+
+  padding: 16px 18px !important;
+
+  border-radius: 14px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+.agent-user-message {
+  margin-left: auto !important;
+
+  background: #1b1b1b !important;
+
+  border: 1px solid #292929 !important;
+}
+
+
+.agent-ai-message {
+  margin-right: auto !important;
+
+  background: transparent !important;
+
+  border: 0 !important;
+}
+
+
+.agent-message-label {
+  display: block !important;
+
+  margin-bottom: 7px !important;
+
+  font-size: 12px !important;
+
+  color: #777777 !important;
+}
+
+
+.agent-message p {
+  margin: 0 !important;
+
+  line-height: 1.65 !important;
+
+  color: #eeeeee !important;
+}
+
+
+/* =========================================================
+   BOTTOM INPUT AREA
+   ========================================================= */
+
+.agent-input-container {
+  position: relative !important;
+
+  flex: 0 0 auto !important;
+
+  width: 100% !important;
+
+  padding: 12px 28px 18px !important;
+
+  box-sizing: border-box !important;
+
+  background: #080808 !important;
+
+  border-top: 1px solid #181818 !important;
+
+  z-index: 10 !important;
+}
+
+
+/* Tools */
+
+.agent-tools {
+  width: min(900px, 100%) !important;
+
+  margin: 0 auto 10px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 8px !important;
+
+  overflow-x: auto !important;
+}
+
+
+.agent-tools button {
+  flex: 0 0 auto !important;
+
+  height: 38px !important;
+
+  padding: 0 13px !important;
+
+  background: #111111 !important;
+
+  border: 1px solid #292929 !important;
+  border-radius: 9px !important;
+
+  color: #cccccc !important;
+
+  cursor: pointer !important;
+}
+
+
+/* Input */
+
+.agent-input-box {
+  width: min(900px, 100%) !important;
+
+  min-height: 72px !important;
+
+  margin: 0 auto !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+
+  gap: 10px !important;
+
+  padding: 12px !important;
+
+  box-sizing: border-box !important;
+
+  background: #111111 !important;
+
+  border: 1px solid #303030 !important;
+  border-radius: 16px !important;
+}
+
+
+.agent-input-box textarea {
+  flex: 1 1 auto !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+
+  min-height: 46px !important;
+  max-height: 180px !important;
+
+  padding: 12px !important;
+
+  resize: none !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  background: transparent !important;
+
+  color: #ffffff !important;
+
+  font: inherit !important;
+}
+
+
+.agent-input-box textarea::placeholder {
+  color: #666666 !important;
+}
+
+
+/* Send */
+
+.agent-send-button {
+  flex: 0 0 46px !important;
+
+  width: 46px !important;
+  height: 46px !important;
+
+  border: 0 !important;
+  border-radius: 12px !important;
+
+  background: #eeeeee !important;
+  color: #111111 !important;
+
+  font-size: 20px !important;
+
+  cursor: pointer !important;
+}
+
+
+.agent-send-button:disabled {
+  opacity: 0.45 !important;
+
+  cursor: default !important;
+}
+
+
+/* Disclaimer */
+
+.agent-disclaimer {
+  width: min(900px, 100%) !important;
+
+  margin: 7px auto 0 !important;
+
+  text-align: center !important;
+
+  font-size: 10px !important;
+
+  color: #444444 !important;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.agent-header .back-button {
+  position: relative !important;
+
+  z-index: 5 !important;
+
+  flex: 0 0 auto !important;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.agent-main::-webkit-scrollbar,
+.agent-sidebar-history::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.agent-main::-webkit-scrollbar-track,
+.agent-sidebar-history::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.agent-main::-webkit-scrollbar-thumb,
+.agent-sidebar-history::-webkit-scrollbar-thumb {
+  background: #303030 !important;
+  border-radius: 10px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .agent-sidebar {
+    display: none !important;
+  }
+
+  .agent-header {
+    padding: 0 16px !important;
+  }
+
+  .agent-header .back-button {
+    display: none !important;
+  }
+
+  .agent-header .agent-title {
+    position: relative !important;
+
+    left: auto !important;
+    top: auto !important;
+
+    transform: none !important;
+
+    margin: 0 !important;
+  }
+
+  .agent-title .brand-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .agent-new-chat {
+    padding: 0 12px !important;
+  }
+
+  .agent-welcome {
+    width: calc(100% - 32px) !important;
+  }
+
+  .agent-welcome h1 {
+    font-size: 32px !important;
+  }
+
+  .agent-suggestions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .agent-messages {
+    width: calc(100% - 28px) !important;
+  }
+
+  .agent-input-container {
+    padding: 10px 12px 14px !important;
+  }
+
+  .agent-tools {
+    width: 100% !important;
+  }
+}
+/* =========================================================
+   PERSPECTRA AI — FINAL VISUAL THEME
+   Black + Deep Navy + Electric Blue
+   ========================================================= */
+
+
+/* =========================================================
+   THEME VARIABLES
+   ========================================================= */
+
+.agent-page {
+  --perspectra-blue: #4da3ff;
+  --perspectra-cyan: #63d8ff;
+  --perspectra-purple: #7c6cff;
+
+  --perspectra-bg: #07090d;
+  --perspectra-sidebar: #0b0e13;
+  --perspectra-panel: #10141b;
+  --perspectra-panel-hover: #151b24;
+
+  --perspectra-border: rgba(100, 160, 220, 0.16);
+  --perspectra-border-hover: rgba(77, 163, 255, 0.45);
+
+  --perspectra-text: #f5f8ff;
+  --perspectra-muted: #788397;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+   ========================================================= */
+
+.agent-page {
+  background:
+    radial-gradient(
+      circle at 65% 25%,
+      rgba(58, 119, 190, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(92, 73, 190, 0.05),
+      transparent 28%
+    ),
+    var(--perspectra-bg) !important;
+
+  color: var(--perspectra-text) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.agent-sidebar {
+  background:
+    linear-gradient(
+      180deg,
+      #0d1117 0%,
+      #090c11 100%
+    ) !important;
+
+  border-right: 1px solid var(--perspectra-border) !important;
+
+  box-shadow:
+    8px 0 35px rgba(0, 0, 0, 0.18) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+   ========================================================= */
+
+.agent-sidebar-brand {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.015),
+      transparent
+    ) !important;
+}
+
+
+/* Perspectra P logo */
+
+.agent-sidebar-brand .brand-icon,
+.agent-sidebar-brand .logo-icon,
+.agent-sidebar-brand .brand-logo {
+  position: relative !important;
+
+  width: 42px !important;
+  height: 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-shrink: 0 !important;
+
+  border-radius: 12px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #eaf5ff 100%
+    ) !important;
+
+  color: #1677d2 !important;
+
+  font-weight: 800 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(77, 163, 255, 0.15),
+    0 6px 22px rgba(35, 130, 220, 0.12) !important;
+}
+
+
+/* If P is directly inside brand */
+
+.agent-sidebar-brand .brand-icon {
+  font-size: 18px !important;
+}
+
+
+/* Sidebar brand text */
+
+.agent-sidebar-brand strong,
+.agent-sidebar-brand h1,
+.agent-sidebar-brand h2 {
+  color: #f7faff !important;
+}
+
+
+/* AI Workspace text */
+
+.agent-sidebar-brand small {
+  color: #64748b !important;
+}
+
+
+/* =========================================================
+   SIDEBAR NEW CHAT
+   ========================================================= */
+
+.agent-sidebar-new {
+  padding: 24px 20px !important;
+}
+
+
+/* Premium new chat button */
+
+.sidebar-new-chat-button {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 52px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  padding: 0 14px !important;
+
+  gap: 11px !important;
+
+  border: 1px solid rgba(77, 163, 255, 0.20) !important;
+
+  border-radius: 12px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(39, 91, 143, 0.20),
+      rgba(22, 30, 45, 0.85)
+    ) !important;
+
+  color: #f4f8ff !important;
+
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  cursor: pointer !important;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease !important;
+}
+
+
+.sidebar-new-chat-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(50, 119, 190, 0.28),
+      rgba(25, 35, 52, 0.95)
+    ) !important;
+
+  border-color: rgba(77, 163, 255, 0.55) !important;
+
+  box-shadow:
+    0 8px 30px rgba(31, 119, 210, 0.10) !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+/* Icon */
+
+.sidebar-new-chat-icon {
+  width: 28px !important;
+  height: 28px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 8px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--perspectra-blue),
+      var(--perspectra-cyan)
+    ) !important;
+
+  color: #06101a !important;
+
+  font-size: 15px !important;
+  font-weight: 800 !important;
+
+  box-shadow:
+    0 0 18px rgba(77, 163, 255, 0.22) !important;
+}
+
+
+/* Text */
+
+.sidebar-new-chat-text {
+  flex: 1 !important;
+
+  text-align: left !important;
+
+  color: #eef5ff !important;
+}
+
+
+/* Arrow */
+
+.sidebar-new-chat-arrow {
+  color: #6f9cc8 !important;
+
+  font-size: 16px !important;
+
+  transition: transform .2s ease !important;
+}
+
+
+.sidebar-new-chat-button:hover .sidebar-new-chat-arrow {
+  transform: translate(2px, -2px) !important;
+
+  color: #7bc8ff !important;
+}
+
+
+/* =========================================================
+   CHAT HISTORY
+   ========================================================= */
+
+.agent-sidebar-history {
+  padding: 4px 12px !important;
+}
+
+
+.agent-sidebar-history::before {
+  color: #58677b !important;
+}
+
+
+/* History items */
+
+.agent-sidebar-history button,
+.agent-sidebar-history > div {
+  border-radius: 10px !important;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease !important;
+}
+
+
+.agent-sidebar-history button:hover,
+.agent-sidebar-history > div:hover {
+  background: rgba(77, 163, 255, 0.06) !important;
+
+  border-color: rgba(77, 163, 255, 0.15) !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BACK
+   ========================================================= */
+
+.agent-sidebar-back {
+  background: rgba(5, 8, 12, 0.35) !important;
+}
+
+
+.agent-sidebar-back button,
+.agent-sidebar-back a {
+  color: #7e8da1 !important;
+
+  transition: color .2s ease !important;
+}
+
+
+.agent-sidebar-back button:hover,
+.agent-sidebar-back a:hover {
+  color: #8bc9ff !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.agent-header {
+  background:
+    rgba(7, 9, 13, 0.94) !important;
+
+  border-bottom: 1px solid var(--perspectra-border) !important;
+
+  backdrop-filter: blur(18px) !important;
+}
+
+
+/* =========================================================
+   HEADER P LOGO
+   ========================================================= */
+
+.agent-title .brand-icon {
+  position: relative !important;
+
+  width: 42px !important;
+  height: 42px !important;
+
+  border-radius: 12px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #e7f4ff 100%
+    ) !important;
+
+  color: #1478d4 !important;
+
+  font-weight: 900 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(77, 163, 255, 0.20),
+    0 5px 22px rgba(45, 145, 230, 0.16) !important;
+}
+
+
+/* Header title */
+
+.agent-title strong {
+  color: #f4f8ff !important;
+}
+
+
+.agent-title small {
+  color: #65758a !important;
+}
+
+
+/* =========================================================
+   HEADER NEW CHAT
+   ========================================================= */
+
+.agent-new-chat {
+  height: 44px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 9px !important;
+
+  padding: 0 15px !important;
+
+  border-radius: 11px !important;
+
+  border: 1px solid rgba(77, 163, 255, 0.20) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 65, 100, 0.24),
+      rgba(17, 22, 31, 0.9)
+    ) !important;
+
+  color: #edf6ff !important;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease !important;
+}
+
+
+.agent-new-chat:hover {
+  border-color: rgba(77, 163, 255, 0.55) !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(39, 92, 145, 0.32),
+      rgba(20, 28, 41, 0.95)
+    ) !important;
+
+  box-shadow:
+    0 6px 25px rgba(35, 126, 210, 0.10) !important;
+}
+
+
+/* Header New Chat icon */
+
+.new-chat-icon {
+  width: 23px !important;
+  height: 23px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 7px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--perspectra-blue),
+      var(--perspectra-cyan)
+    ) !important;
+
+  color: #06101a !important;
+
+  font-size: 12px !important;
+  font-weight: 900 !important;
+}
+
+
+/* =========================================================
+   WELCOME SCREEN
+   ========================================================= */
+
+.agent-welcome-icon {
+  color: #63caff !important;
+
+  text-shadow:
+    0 0 20px rgba(80, 188, 255, 0.40) !important;
+}
+
+
+.agent-welcome h1 {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 10%,
+      #b8dfff 50%,
+      #ffffff 90%
+    ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+
+  -webkit-text-fill-color: transparent !important;
+}
+
+
+.agent-welcome p {
+  color: #68778b !important;
+}
+
+
+/* =========================================================
+   SUGGESTION CARDS
+   ========================================================= */
+
+.agent-suggestions button {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(17, 23, 32, 0.96),
+      rgba(11, 15, 22, 0.96)
+    ) !important;
+
+  border: 1px solid rgba(83, 120, 158, 0.18) !important;
+
+  color: #e9f3ff !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.025) !important;
+}
+
+
+.agent-suggestions button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(25, 45, 66, 0.95),
+      rgba(13, 22, 32, 0.98)
+    ) !important;
+
+  border-color: rgba(77, 163, 255, 0.42) !important;
+
+  box-shadow:
+    0 8px 30px rgba(30, 125, 215, 0.08) !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   INPUT TOOLS
+   ========================================================= */
+
+.agent-tools button {
+  background: #0e131a !important;
+
+  border-color: rgba(77, 163, 255, 0.13) !important;
+
+  color: #aab9ca !important;
+}
+
+
+.agent-tools button:hover {
+  background: #141c27 !important;
+
+  border-color: rgba(77, 163, 255, 0.38) !important;
+
+  color: #e4f2ff !important;
+}
+
+
+/* =========================================================
+   INPUT BOX
+   ========================================================= */
+
+.agent-input-box {
+  background:
+    linear-gradient(
+      135deg,
+      #0d1117,
+      #10161f
+    ) !important;
+
+  border-color: rgba(77, 163, 255, 0.18) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.2),
+    0 12px 45px rgba(0,0,0,.25) !important;
+}
+
+
+.agent-input-box:focus-within {
+  border-color: rgba(77, 163, 255, 0.48) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(77, 163, 255, 0.06),
+    0 15px 45px rgba(0,0,0,.30) !important;
+}
+
+
+/* Send button */
+
+.agent-send-button {
+  background:
+    linear-gradient(
+      135deg,
+      #55b8ff,
+      #3c91ed
+    ) !important;
+
+  color: #06101a !important;
+
+  box-shadow:
+    0 4px 18px rgba(61, 157, 239, 0.20) !important;
+}
+
+
+.agent-send-button:hover:not(:disabled) {
+  background:
+    linear-gradient(
+      135deg,
+      #71c7ff,
+      #4da3ff
+    ) !important;
+}
+
+
+/* =========================================================
+   MESSAGE BUBBLES
+   ========================================================= */
+
+.agent-user-message {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 65, 100, 0.32),
+      rgba(17, 25, 36, 0.9)
+    ) !important;
+
+  border-color: rgba(77, 163, 255, 0.16) !important;
+}
+
+
+.agent-ai-message {
+  color: #e7eff8 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .agent-title strong {
+    font-size: 14px !important;
+  }
+
+  .agent-title small {
+    font-size: 10px !important;
+  }
+
+  .agent-new-chat {
+    padding: 0 11px !important;
+  }
+
+  .agent-new-chat span:last-child {
+    display: none !important;
+  }
+}
+.agent-sidebar-logo {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #e8f5ff
+  );
+
+  color: #1478d4;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  box-shadow:
+    0 0 0 1px rgba(77,163,255,.2),
+    0 5px 22px rgba(45,145,230,.16);
+}
+/* ================================
+   PERSPECTRA BRANDING
+================================ */
+
+.agent-sidebar-brand {
+  height: 92px;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.agent-sidebar-brand-icon,
+.agent-title-icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #080808;
+
+  font-weight: 800;
+  font-size: 21px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 22px rgba(124, 92, 255, 0.10);
+}
+
+
+/* Sidebar P */
+
+.agent-sidebar-brand-icon {
+  width: 42px;
+  height: 42px;
+}
+
+
+/* Sidebar text */
+
+.agent-sidebar-brand-text strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.agent-sidebar-brand-text strong span {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #a78bfa
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.agent-sidebar-brand-text small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #707070;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   AGENT HEADER BRAND
+================================ */
+
+.agent-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.agent-title-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.agent-title strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.agent-title small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #707070;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   HEADER NEW CHAT
+================================ */
+
+.agent-header-new-chat {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 15px;
+
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
+
+  background: #0d0d0d;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.agent-header-new-chat:hover {
+  border-color: rgba(139,92,246,0.45);
+
+  background: rgba(139,92,246,0.08);
+}
+
+.agent-header-new-chat-icon {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: rgba(139,92,246,0.15);
+
+  color: #a78bfa;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+/* =========================================================
+   PERSPECTRA AI — FINAL BRAND THEME OVERRIDE
+   Paste this at the VERY END of App.css
+========================================================= */
+
+
+/* =========================
+   BRAND COLORS
+========================= */
+
+:root {
+  --perspectra-purple: #8b5cf6;
+  --perspectra-purple-light: #a78bfa;
+  --perspectra-blue: #6366f1;
+}
+
+
+/* =========================
+   ALL P LOGOS
+========================= */
+
+.agent-sidebar-brand-icon,
+.agent-title-icon,
+.agent-avatar {
+  background: linear-gradient(
+    135deg,
+    #8b5cf6 0%,
+    #7c3aed 45%,
+    #6366f1 100%
+  ) !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid rgba(167, 139, 250, 0.45) !important;
+
+  box-shadow:
+    0 8px 25px rgba(124, 58, 237, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+
+/* Sidebar P */
+
+.agent-sidebar-brand-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  border-radius: 12px !important;
+
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+
+/* Agent header P */
+
+.agent-title-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  border-radius: 12px !important;
+
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+
+/* Assistant message P */
+
+.agent-avatar {
+  width: 34px !important;
+  height: 34px !important;
+
+  border-radius: 10px !important;
+
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+
+/* =========================
+   PERSPECTRA TEXT
+========================= */
+
+.agent-sidebar-brand-text strong,
+.agent-title strong {
+  color: #ffffff !important;
+}
+
+
+/* AI gradient */
+
+.agent-sidebar-brand-text strong span,
+.agent-title strong span {
+  background: linear-gradient(
+    90deg,
+    #a78bfa 0%,
+    #8b5cf6 45%,
+    #6366f1 100%
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+
+  -webkit-text-fill-color: transparent !important;
+
+  color: transparent !important;
+}
+
+
+/* =========================
+   SIDEBAR BRAND
+========================= */
+
+.agent-sidebar-brand {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.14) !important;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.agent-header {
+  border-bottom: 1px solid rgba(139, 92, 246, 0.14) !important;
+}
+
+
+/* =========================
+   NEW CHAT BUTTON
+========================= */
+
+.sidebar-new-chat-button,
+.agent-header-new-chat {
+  border-color: rgba(139, 92, 246, 0.25) !important;
+
+  background: rgba(139, 92, 246, 0.035) !important;
+
+  color: #ffffff !important;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+
+.sidebar-new-chat-button:hover,
+.agent-header-new-chat:hover {
+  background: rgba(139, 92, 246, 0.10) !important;
+
+  border-color: rgba(139, 92, 246, 0.55) !important;
+
+  transform: translateY(-1px);
+}
+
+
+/* New chat icons */
+
+.sidebar-new-chat-icon,
+.agent-header-new-chat-icon {
+  color: #a78bfa !important;
+
+  background: rgba(139, 92, 246, 0.12) !important;
+}
+
+
+/* =========================
+   SIDEBAR ACTIVE CHAT
+========================= */
+
+.agent-chat-item.active {
+  background: rgba(139, 92, 246, 0.10) !important;
+
+  border-color: rgba(139, 92, 246, 0.28) !important;
+}
+
+
+.agent-chat-item.active .agent-chat-icon {
+  color: #a78bfa !important;
+}
+
+
+/* =========================
+   WELCOME STAR
+========================= */
+
+.agent-welcome-icon {
+  color: #a78bfa !important;
+
+  text-shadow:
+    0 0 18px rgba(139, 92, 246, 0.45);
+}
+
+
+/* =========================
+   SUGGESTION CARDS
+========================= */
+
+.agent-suggestion:hover {
+  border-color: rgba(139, 92, 246, 0.45) !important;
+
+  background: rgba(139, 92, 246, 0.06) !important;
+}
+
+
+/* =========================
+   TOOL BUTTONS
+========================= */
+
+.agent-tool:hover {
+  border-color: rgba(139, 92, 246, 0.40) !important;
+
+  color: #c4b5fd !important;
+
+  background: rgba(139, 92, 246, 0.07) !important;
+}
+
+
+/* =========================
+   SEND BUTTON
+========================= */
+
+.agent-send-button {
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #6366f1
+  ) !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+
+  box-shadow:
+    0 5px 18px rgba(99, 102, 241, 0.25) !important;
+}
+
+
+.agent-send-button:hover:not(:disabled) {
+  background: linear-gradient(
+    135deg,
+    #a78bfa,
+    #7c3aed
+  ) !important;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.agent-input-box:focus-within {
+  border-color: rgba(139, 92, 246, 0.45) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(139, 92, 246, 0.07) !important;
+}
+
+
+/* =========================
+   SIDEBAR BACK BUTTON
+========================= */
+
+.agent-sidebar-back:hover {
+  color: #a78bfa !important;
+}
+/* =========================================
+   HOME PAGE — PERSPECTRA BRAND LOGO
+   ========================================= */
+
+.navbar .brand-icon,
+.auth-brand .brand-icon,
+.footer-brand .brand-icon {
+  background: linear-gradient(
+    135deg,
+    #8b5cf6 0%,
+    #7c3aed 45%,
+    #6366f1 100%
+  ) !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid rgba(167, 139, 250, 0.45) !important;
+
+  box-shadow:
+    0 6px 20px rgba(124, 58, 237, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+
+/* Home Perspectra text */
+
+.navbar .brand {
+  color: #ffffff !important;
+}
+
+
+/* AI purple gradient */
+
+.navbar .brand strong,
+.auth-brand strong {
+  background: linear-gradient(
+    90deg,
+    #a78bfa,
+    #8b5cf6,
+    #6366f1
+  ) !important;
+
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+
+  color: transparent !important;
+}
