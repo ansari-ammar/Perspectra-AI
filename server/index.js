@@ -3,14 +3,57 @@ const cors = require("cors");
 require("dotenv").config();
 
 const { GoogleGenAI } = require("@google/genai");
+const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 app.use(cors());
 app.use(express.json());
 
-const ai = new GoogleGenAI({
+const ai = new GoogleGenAI
+async function saveDebateAnalytics({
+  topic,
+  side,
+  language,
+  difficulty,
+  userMessage,
+  aiResponse,
+  provider,
+}) {
+  try {
+    const { error } = await supabase
+      .from("debate_analytics")
+      .insert({
+        topic,
+        side,
+        language: language || "English",
+        difficulty: difficulty || "Beginner",
+        user_message: userMessage,
+        ai_response: aiResponse,
+        provider,
+      });
+
+    if (error) {
+      console.error(
+        "Analytics save failed:",
+        error.message
+      );
+    } else {
+      console.log("Debate analytics saved.");
+    }
+  } catch (error) {
+    console.error(
+      "Analytics error:",
+      error.message
+    );
+  }
+}
+({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
@@ -149,13 +192,22 @@ Give your debate response.
         const reply = response.text;
 
         if (reply) {
-          console.log("Response provider: Gemini");
+  console.log("Response provider: Gemini");
 
-          return res.json({
-            reply,
-            provider: "Gemini",
-          });
-        }
+  await saveDebateAnalytics({
+    topic,
+    side,
+    language,
+    difficulty,
+    userMessage,
+    provider: "Gemini",
+  });
+
+  return res.json({
+    reply,
+    provider: "Gemini",
+  });
+}
       }
 
       console.log(
@@ -227,10 +279,20 @@ Give your debate response.
 
         console.log("Response provider: OpenRouter");
 
-        return res.json({
-          reply,
-          provider: "OpenRouter",
-        });
+await saveDebateAnalytics({
+  topic,
+  side,
+  language,
+  difficulty,
+  userMessage,
+  aiResponse: reply,
+  provider: "OpenRouter",
+});
+
+return res.json({
+  reply,
+  provider: "OpenRouter",
+});
       } catch (openRouterError) {
 
         console.error(
@@ -243,7 +305,6 @@ Give your debate response.
         );
       }
     } else {
-      openRouterFailed = true;
 
       console.log(
         "OPENROUTER_API_KEY not configured. Switching to Groq..."
@@ -312,10 +373,19 @@ Give your debate response.
 
       console.log("Response provider: Groq");
 
-      return res.json({
-        reply,
-        provider: "Groq",
-      });
+await saveDebateAnalytics({
+  topic,
+  side,
+  language,
+  difficulty,
+  userMessage,
+  provider: "Groq",
+});
+
+return res.json({
+  reply,
+  provider: "Groq",
+});
     } catch (groqError) {
       console.error(
         "Groq fallback failed:",
